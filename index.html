@@ -3,10 +3,13 @@
 <head></head>
 <body>
   <script>
+
       let playerScore = 0;
       let computerScore = 0;
 
       // Returns a random move from the computer.
+      
+      
       function computerPlay() {
           let randomNum = Math.random();
 
@@ -45,6 +48,31 @@
           else return "It's a tie";
       }
 
+      function game() {
+          
+          playerScore = 0;
+          computerScore = 0;
+          let playerSelection;
+          let i; 
+
+          for (i=0; i<5; i++) {
+              playerSelection = prompt("Choose one of rock/paper/scissors");
+              let result = playRound(playerSelection, computerPlay());
+              console.log(result);
+          } 
+
+              if (playerScore > computerScore) {
+                console.log("Winner Winner Chicken Dinner!");
+              } else if (playerScore < computerScore) {
+                console.log("You lose.");
+              } else {
+                console.log("You tied.");
+            }
+              console.log("Final score: player: " + playerScore + " computer: " + computerScore)
+        }
+
+      game(); 
+      
 
   </script>
 </body>
